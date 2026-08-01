@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: searched
+source: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+docs: https://engineering.rescale.com/api-docs/
+authentication:
+  style: token
+  header: 'Authorization: Token <api-token>'
+  see: authentication/rescale-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v2
+  base: https://platform.rescale.com/api/v2/
+  regional_hosts:
+  - https://platform.rescale.com/api/v2/
+  - https://eu.rescale.com/api/v2/
+  - https://platform.rescale.jp/api/v2/
+  see: lifecycle/rescale-lifecycle.yml
+pagination:
+  style: page-number
+  params: [page, page_size]
+  notes: >-
+    List endpoints (jobs, files, runs, ...) page results with page and page_size
+    query parameters.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or contract is documented for the Rescale REST API.
+files:
+  upload_limit: 5 GB per file
+  endpoints:
+  - 'POST /api/v2/files/contents/'
+  - 'GET /api/v2/files/contents/'
+resources:
+- Coretypes (hardware configurations)
+- Analyses (available software + versions)
+- Jobs (create/retrieve/update/delete/submit/stop)
+- Runs (individual job executions and results)
+- Files (input/output)
+- Projects (grouping + prioritization)
+- Tags (labels)
+- Custom Fields (workspace metadata)
+- Instances (VM info for running jobs)
+- Status History (job/cluster state changes)
+error_handling:
+  notes: >-
+    Standard HTTP status codes; no documented RFC 9457 problem+json envelope or
+    published error-code registry was found.

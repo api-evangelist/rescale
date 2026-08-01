@@ -1,0 +1,67 @@
+generated: '2026-07-20'
+method: derived
+source: >-
+  Derived from the documented Rescale REST API v2 resource model
+  (https://rescale.com/documentation/main/rescale-advanced-features/rest-api/);
+  no OpenAPI spec is published, so relationships are inferred from the prose
+  object reference, not from spec $refs.
+entities:
+- name: Job
+  description: A simulation job definition; the primary unit of work.
+  endpoint: /api/v2/jobs/
+- name: Run
+  description: An individual execution of a job and its results.
+  endpoint: /api/v2/runs/
+- name: File
+  description: Input or output file (5 GB per-file upload limit).
+  endpoint: /api/v2/files/contents/
+- name: Analysis
+  description: An available software application and version (e.g. abaqus, comsol).
+  endpoint: /api/v2/analyses/
+- name: Coretype
+  description: A hardware configuration / core type (e.g. hpc-3 Emerald, titanium).
+  endpoint: /api/v2/coretypes/
+- name: Project
+  description: Groups and prioritizes jobs.
+  endpoint: /api/v2/projects/
+- name: Tag
+  description: Label used to organize jobs.
+- name: Instance
+  description: VM information for a running job.
+- name: CustomField
+  description: Workspace-specific metadata attached to jobs.
+- name: StatusHistory
+  description: Job/cluster state-change history.
+relationships:
+- from: Job
+  to: Run
+  type: has_many
+  via: runs
+- from: Job
+  to: File
+  type: has_many
+  via: files
+- from: Job
+  to: Analysis
+  type: has_many
+  via: jobanalyses
+- from: Job
+  to: Coretype
+  type: belongs_to
+  via: coreType
+- from: Job
+  to: Project
+  type: belongs_to
+  via: project
+- from: Job
+  to: Tag
+  type: has_many
+  via: tags
+- from: Job
+  to: StatusHistory
+  type: has_many
+  via: statuses
+- from: Run
+  to: Instance
+  type: has_many
+  via: instances

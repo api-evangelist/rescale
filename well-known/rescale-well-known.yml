@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of Rescale hosts
+notes: >-
+  No .well-known discovery documents were served. platform.rescale.com returned
+  502 to automated requests (likely WAF/bot filtering); rescale.com served a
+  real 404 for security.txt. No OIDC/OAuth metadata (the platform uses token
+  auth, not OAuth2). Recorded for auditability; no WellKnown pointer wired since
+  nothing returned 200.
+hosts:
+- host: https://rescale.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://platform.rescale.com
+  documents:
+  - {path: /.well-known/security.txt, status: 502}
+  - {path: /.well-known/openid-configuration, status: 502}
+  - {path: /.well-known/oauth-authorization-server, status: 502}
+  - {path: /.well-known/api-catalog, status: 502}

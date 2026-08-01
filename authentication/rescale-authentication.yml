@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: searched
+source: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+docs: https://rescale.com/documentation/main/platform-faqs/api-faq/
+summary:
+  types: [apiKey, http]
+  api_key_in: [header]
+  notes: >-
+    Rescale uses token-based authentication. API keys are generated from the
+    Rescale platform (Profile > User Profile Settings > API > Add API Key, or
+    Settings > API Key at platform.rescale.com/user/settings/). There is no
+    OAuth2/OIDC surface documented.
+schemes:
+- name: RescaleRestToken
+  type: apiKey
+  in: header
+  parameter: Authorization
+  format: 'Token <api-token>'
+  used_by: Rescale REST API v2 (platform.rescale.com/api/v2/)
+- name: RescaleMcpApiKey
+  type: apiKey
+  in: header
+  parameter: X-Rescale-Api-Key
+  used_by: Rescale hosted MCP server
+- name: RescaleHtcBearer
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  used_by: Rescale HTC API (rescalehtc client; rauthenticate CLI manages refresh tokens)
+  notes: >-
+    The HTC API uses JWT bearer tokens obtained from API/refresh tokens; the
+    rescalehtc library auto-renews them and supports multiple workspaces.
+- name: RescaleJobEmbeddedKey
+  type: apiKey
+  in: env
+  parameter: RESCALE_API_KEY
+  used_by: In-job post-processing
+  notes: >-
+    Jobs receive a temporary RESCALE_API_KEY environment variable scoped to the
+    job that expires after the job completes.

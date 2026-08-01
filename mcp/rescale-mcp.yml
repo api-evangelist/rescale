@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://rescale.com/documentation/mcp-server-getting-started/
+server:
+  name: rescale
+  transport: http
+  description: >-
+    Rescale hosts an official remote MCP server over HTTP, letting any
+    MCP-compatible client (Claude Code, Claude Desktop, Cursor, VS Code Copilot,
+    Windsurf, Gemini CLI) drive the Rescale platform in natural language:
+    create/submit/monitor/stop/terminate jobs and workstations, transfer files,
+    and view logs and status. Requires Advanced Modeling & Simulation features
+    on the account.
+  authentication:
+    type: apiKey
+    in: header
+    name: X-Rescale-Api-Key
+    docs: https://platform.rescale.com/user/settings/
+  endpoints:
+  - region: United States
+    url: https://mcp.services.platform.rescale.com/mcp
+  - region: Europe
+    url: https://mcp.services.eu.rescale.com/mcp
+  - region: Korea
+    url: https://mcp.services.kr.rescale.com/mcp
+  - region: Japan
+    url: https://mcp.services.platform.rescale.jp/mcp
+capabilities:
+- Create, submit, monitor, stop and terminate jobs and workstations
+- Upload input files and download result files
+- View logs and monitor job/cluster status

@@ -1,8 +1,24 @@
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 aid: rescale
 name: Rescale
-description: Rescale is a company surfaced as a portfolio company of a16z, dcvc, initialized-capital and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Rescale is a high-performance computing (HPC) and simulation platform that
+  gives R&D and engineering teams a unified, cloud-based environment to run
+  modeling, simulation, and AI-physics workloads across CPU and GPU
+  infrastructure. Engineers submit and orchestrate jobs against hundreds of
+  packaged engineering applications (Ansys, STAR-CCM+, Abaqus, COMSOL, OpenFOAM
+  and more), manage data and results, and increasingly automate workflows with
+  agentic tooling. Rescale exposes a token-authenticated REST API (v2), a
+  high-throughput computing (HTC) API with Python and Go clients, a first-party
+  CLI, and a hosted Model Context Protocol (MCP) server so agents and automation
+  can create, submit, monitor, and manage simulation jobs, files, workstations,
+  and clusters programmatically. The platform is FedRAMP-authorized, SOC 2 Type
+  II, ISO 27001, ITAR-registered, and FIPS-aligned for aerospace, automotive,
+  energy, life-sciences and defense engineering teams.
 url: https://raw.githubusercontent.com/api-evangelist/rescale/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,17 +28,111 @@ x-backed-by:
 - initialized-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://rescale.com/wp-content/uploads/LinkedIn-Header-Employee.png
 tags:
 - Company
-apis: []
+- High Performance Computing
+- Simulation
+- Cloud
+- Engineering
+- CAE
+- HPC
+- AI Physics
+- Jobs
+- Compute
+apis:
+- name: Rescale REST API
+  description: >-
+    Rescale's token-authenticated REST API (v2) for creating, submitting,
+    monitoring and managing simulation jobs, uploading and downloading files,
+    listing available software (analyses) and hardware (coretypes), and
+    organizing work into projects, runs and tags on the Rescale platform.
+  humanURL: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+  baseURL: https://platform.rescale.com/api/v2/
+  properties:
+  - type: Documentation
+    url: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+  - type: APIReference
+    url: https://engineering.rescale.com/api-docs/
+  - type: Authentication
+    url: authentication/rescale-authentication.yml
+- name: Rescale HTC API
+  description: >-
+    Rescale's high-throughput computing (HTC) REST API for batch container
+    workloads, organized around projects, tasks, job batches and a container
+    registry, with bearer/JWT token authentication managed via the rescalehtc
+    Python client and the htc-cli Go command-line tool.
+  humanURL: https://rescale.com/platform/hpc-as-a-service/high-throughput-computing/
+  baseURL: https://htc.rescale.com/
+  properties:
+  - type: Documentation
+    url: https://rescale-htc-python.readthedocs.io/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/rescale-domain-security.yml
 - type: Website
-  url: http://rescale.com
+  url: https://rescale.com
+- type: DeveloperPortal
+  url: https://rescale.com/documentation/
+- type: Documentation
+  url: https://rescale.com/documentation/
+- type: APIReference
+  url: https://engineering.rescale.com/api-docs/
+- type: Blog
+  url: https://rescale.com/blog/
+- type: Pricing
+  url: https://rescale.com/pricing/
+- type: SignUp
+  url: https://rescale.com/rescale-signup/
+- type: Login
+  url: https://rescale.com/rescale-login/
+- type: Support
+  url: https://rescale.com/rescale-support-request/
+- type: TermsOfService
+  url: https://rescale.com/company/legal/customer-agreement/
+- type: PrivacyPolicy
+  url: https://rescale.com/company/legal/privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/rescale-labs
+- type: MCPServer
+  url: mcp/rescale-mcp.yml
+- type: Packages
+  url: packages/rescale-packages.yml
+- type: SDKs
+  url: packages/rescale-packages.yml
+- type: CLI
+  url: cli/rescale-cli.yml
+- type: Authentication
+  url: authentication/rescale-authentication.yml
+- type: Conventions
+  url: conventions/rescale-conventions.yml
+- type: Lifecycle
+  url: lifecycle/rescale-lifecycle.yml
+- type: Conformance
+  url: conformance/rescale-conformance.yml
+- type: Compliance
+  url: https://rescale.com/platform/security-compliance/
+- type: DataModel
+  url: data-model/rescale-data-model.yml
+- type: LLMsTxt
+  url: llms/rescale-llms.txt

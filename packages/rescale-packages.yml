@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/rescale-labs + https://pypi.org/project/rescalehtc/
+packages:
+- language: python
+  registry: pypi
+  name: rescalehtc
+  url: https://pypi.org/project/rescalehtc/
+  install: pip3 install rescalehtc
+  version: 1.1.0
+  official: true
+  notes: >-
+    Rescale HTC (high-throughput computing) Python client. Published under the
+    rescale-labs org; maintainers include a Rescale engineer (rescale.com) plus
+    Arm contributors. Docs at rescale-htc-python.readthedocs.io.
+- language: go
+  registry: github
+  name: htc-cli
+  url: https://github.com/rescale-labs/htc-cli
+  install: go install github.com/rescale-labs/htc-cli@latest
+  official: true
+  notes: Rescale HTC command-line tool (Go). Binary catalogued in cli/.
+- language: go
+  registry: github
+  name: Rescale_Interlink
+  url: https://github.com/rescale-labs/Rescale_Interlink
+  install: see GitHub releases (Windows/Mac/Linux binaries)
+  official: true
+  notes: >-
+    Open-source hybrid CLI + GUI tool for data transfer and job management on
+    Rescale. FIPS 140-3 compliant, multithreaded parallel transfers.

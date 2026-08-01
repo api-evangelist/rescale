@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://rescale.com/documentation/ + https://github.com/rescale-labs
+clis:
+- name: Rescale CLI
+  docs: https://rescale.com/documentation/
+  language: java
+  description: >-
+    The classic Rescale command-line interface (versions 1.1x and 1.0x are
+    documented) for setting up, submitting and managing simulation jobs on the
+    Rescale platform. Documentation covers setup, basics, commands, tutorials
+    and FAQs.
+- name: htc-cli
+  repo: https://github.com/rescale-labs/htc-cli
+  language: go
+  install: go install github.com/rescale-labs/htc-cli@latest
+  description: Command-line tool for the Rescale HTC (high-throughput computing) API.
+- name: Rescale Interlink
+  repo: https://github.com/rescale-labs/Rescale_Interlink
+  language: go
+  platforms: [windows, macos, linux]
+  fips: FIPS 140-3 compliant
+  description: >-
+    Open-source hybrid CLI + GUI tool for efficient data transfer and job
+    management on the Rescale platform: multithreaded parallel transfers, visual
+    file browser, auto-download of completed job results, and full job
+    submission.
+- name: rauthenticate
+  part_of: rescalehtc (pip3 install rescalehtc)
+  description: >-
+    Authentication helper shipped with the rescalehtc Python client that manages
+    HTC bearer/refresh tokens across workspaces.

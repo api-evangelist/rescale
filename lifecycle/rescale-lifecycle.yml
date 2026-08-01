@@ -1,0 +1,18 @@
+generated: '2026-07-20'
+method: searched
+source: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation/sunset policy or RFC 8594 header support documented.
+sla:
+  url: https://rescale.com/company/legal/sla/
+  notes: Service Level Agreement published under legal.
+status_page: null
+status_page_notes: >-
+  No active public status page found (rescale.statuspage.io resolves but
+  redirects to /inactive; status.rescale.com does not resolve).
