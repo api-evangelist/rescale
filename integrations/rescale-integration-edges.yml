@@ -3,7 +3,9 @@ method: searched
 checked:
 - https://api.nuget.org/v3
 - https://azuremarketplace.microsoft.com/
+- https://cloudsecurityalliance.org/star/registry
 - https://crates.io/api/v1
+- https://eucoc.cloud/en/public-register/list-of-adherent-services
 - https://govramp.org/program-participants
 - https://proxy.golang.org
 - https://pypi.org/pypi
@@ -29,6 +31,36 @@ edges:
   seller_name: Rescale
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: PyPI
+  partner: pypi
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (Python)
+  evidence: https://pypi.org/project/rescalehtc/
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: rescalehtc
+      version: 1.1.0
+      released: '2025-02-18'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/rescalehtc/
+      repo_leg: github-org:rescale-labs
+      publisher_leg: email:rescale.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 - partner_name: FedRAMP
   partner: null
   partner_match: register
@@ -69,36 +101,36 @@ edges:
       latest_authorization: '2020-11-02'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
-- partner_name: PyPI
-  partner: pypi
+- partner_name: Cloud Security Alliance STAR Registry
+  partner: null
   partner_match: register
   type: register
-  direction: provider-built
-  category: official SDK (Python)
-  evidence: https://pypi.org/project/rescalehtc/
-  channel: package-registry
-  relationship: distribution-channel
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://cloudsecurityalliance.org/star/registry/rescale/services/rescale
+  category: Cloud security assurance
   contract_reference:
-    register: PyPI (public registry JSON)
+    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
     spec_file: null
-    language: Python
-    packages:
-    - name: rescalehtc
-      version: 1.1.0
-      released: '2025-02-18'
-      released_field: upload_time
-      lapsed: false
-      page: https://pypi.org/project/rescalehtc/
-      repo_leg: github-org:rescale-labs
-      publisher_leg: email:rescale.com
-      matched_by: domain
-    current: true
-    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
-      24 months'
-    detected_by: sweep-official-sdks.py
-    detected: '2026-10-18'
-  detected_by: sweep-official-sdks.py
-  first_seen: '2026-10-18'
+    standard: CSA STAR
+    role: star-level-1
+    registered_name: Rescale
+    registry_id: rescale
+    service_url: https://www.rescale.com
+    matched_domain: rescale.com
+    matched_by: domain
+    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
+    levels:
+    - STAR Level 1
+    certified_products: []
+    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
+      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
+      = every instance marked (Deprecated) by the registry; service counts never recorded
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
+  detected_by: sweep-compliance-assurance.py
+  first_seen: '2026-10-20'
 source:
 - https://raw.githubusercontent.com/18F/fedramp-data/4b73d9247fd6360759960e4690e3ce4ca858e0fa/data/data.json
 - https://govramp.org/program-participants
